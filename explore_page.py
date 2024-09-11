@@ -14,7 +14,7 @@ def shorten_categories(categories, cutoff):
 
 # Clean experience data
 def clean_experience(x):
-    if x == 'Less than 1 year':
+    if x == 'Less than 1 year': 
         return 0.5
     if x == 'More than 50 years':
         return 50
