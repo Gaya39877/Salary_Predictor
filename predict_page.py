@@ -44,9 +44,9 @@ def show_predict_page():
     )
 
     # Widgets to take inputs from the user
-    country = st.selectbox("Country", countries, key="country_selectbox_unique1")
-    education_level = st.selectbox("Education Level", education, key="education_selectbox_unique2")
-    experience = st.slider("Years of Experience", 0, 50, 3, key="experience_slider_unique3")
+    country = st.selectbox("Country", countries, key="country_unique_1")
+    education_level = st.selectbox("Education Level", education, key="education_unique_2")
+    experience = st.slider("Years of Experience", 0, 50, 3, key="experience_slider_unique_3")
 
     # When the user clicks "Calculate Salary"
     if st.button("Calculate Salary"):
