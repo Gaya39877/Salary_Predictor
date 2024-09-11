@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 # Function to group less frequent categories as 'Other'
 def shorten_categories(categories, cutoff):
@@ -88,7 +89,22 @@ def show_explore_page():
     )
 
     data = df.groupby(["Country"])["Salary"].mean().sort_values(ascending=True)
-    st.bar_chart(data)
+
+    # Create a bar chart with Plotly and custom color
+    fig = px.bar(
+        data,
+        x=data.index,
+        y=data.values,
+        title="Mean Salary Based On Country",
+        labels={'x': 'Country', 'y': 'Mean Salary'},
+        color_discrete_sequence=["#A5C9CA"]  # Custom color for the bars
+    )
+
+    # Display the chart in Streamlit
+    st.write("#### Mean Salary Based On Country")
+    st.plotly_chart(fig)
+
+    #st.bar_chart(data)
 
     st.write(
         """
