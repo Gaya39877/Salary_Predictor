@@ -95,12 +95,12 @@ def show_explore_page():
         data,
         x=data.index,
         y=data.values,
+        title="Mean Salary Based On Country",
         labels={'x': 'Country', 'y': 'Mean Salary'},
         color_discrete_sequence=["#A5C9CA"]  # Custom color for the bars
     )
 
     # Display the chart in Streamlit
-    st.write("#### Mean Salary Based On Country")
     st.plotly_chart(fig)
 
     #st.bar_chart(data)
